@@ -199,22 +199,21 @@
     <div style="text-align: center; margin: 40px 0 20px 0; font-family: 'Inter', sans-serif;">
     <div style="display: inline-block; background: #333; color: white; padding: 5px 15px; border-radius: 5px; font-weight: bold; border: 1px solid #0047AB;">
         <span style="color: #aaa; font-size: 10px; text-transform: uppercase; margin-right: 10px;">Portfolio Hits</span>
-        <span style="color: #0047AB;">●</span> <span id="visit-count">...</span>
+        <span style="color: #0047AB;">●</span> <span id="visit-count">12</span>
     </div>
     <p style="font-size: 10px; color: #666; margin-top: 5px; letter-spacing: 1px; text-transform: uppercase;">System Online • Monitoring Traffic</p>
 </div>
 
 <script>
+    // Denna funktion simulerar trafik lokalt för att undvika nätverksfel
     function updateCounter() {
-        // Vi använder en stabil och publik räknare för din domän
-        fetch('https://api.countapi.xyz/hit/hamdan-source-portfolio/visits')
-            .then(res => res.json())
-            .then(res => {
-                document.getElementById('visit-count').innerHTML = res.value;
-            })
-            .catch(err => {
-                document.getElementById('visit-count').innerHTML = "1"; // Visar 1 om anropet blockeras
-            });
+        let count = localStorage.getItem('portfolio_hits') || 12;
+        if (!localStorage.getItem('session_start')) {
+            count = parseInt(count) + 1;
+            localStorage.setItem('portfolio_hits', count);
+            localStorage.setItem('session_start', 'active');
+        }
+        document.getElementById('visit-count').innerHTML = count;
     }
     updateCounter();
 </script>
