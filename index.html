@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hamdan Suleiman | IT Support Portfolio</title>
     <style>
-        /* Vi byter till Inter för en rakare och tydligare look */
         @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500&family=Inter:wght@400;500;600;700;800&display=swap');
         
         :root {
@@ -20,7 +19,6 @@
         }
 
         *{box-sizing:border-box;margin:0;padding:0}
-        /* Body använder nu Inter istället för Syne */
         body{font-family:'Inter', sans-serif;background:var(--bg);color:var(--text-main);line-height:1.5; -webkit-font-smoothing: antialiased;}
         .page{max-width:760px;margin:0 auto;padding:3rem 1.5rem}
 
@@ -32,10 +30,22 @@
         .contact-link:hover{color:var(--text-main);text-decoration:underline}
 
         /* Hero Section */
-        .hero{margin-bottom:4rem}
+        .hero{margin-bottom:2.5rem}
         .hero-label{font-family:'DM Mono',monospace;font-size:11px;color:var(--text-sub);text-transform:uppercase;margin-bottom:1rem;display:block}
         .hero-name{font-size:52px;font-weight:800;line-height:1.1;margin-bottom:1rem;letter-spacing:-0.03em}
         .hero-role{font-size:19px;color:var(--text-sub);margin-bottom:1rem;font-weight:500}
+
+        /* Hook Box */
+        .hook-box {
+            background: var(--accent);
+            color: white;
+            border-radius: 10px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 4rem;
+            font-size: 16px;
+            line-height: 1.6;
+            font-weight: 500;
+        }
 
         /* Incident Section */
         .section-label{font-family:'DM Mono',monospace;font-size:11px;text-transform:uppercase;margin-bottom:1.5rem;color:var(--text-sub);display:block;letter-spacing:0.1em}
@@ -101,6 +111,7 @@
             .incident-hero {padding: 1.5rem;}
             .badge {position: static; display: inline-block; margin-bottom: 1rem;}
             .cta-grid {grid-template-columns: 1fr;}
+            .hook-box {font-size: 14px; padding: 1.25rem 1.5rem;}
         }
     </style>
 </head>
@@ -119,6 +130,10 @@
             <h1 class="hero-name">Hamdan<br>Suleiman</h1>
             <p class="hero-role">Fokus på Identity Access Management & Säker Support</p>
         </section>
+
+        <div class="hook-box">
+            Sex dokumenterade supportärenden i en komplett Microsoft-miljö — inklusive ett Priority 1-ärende löst inom SLA. Varje ticket verifierbar. Varje beslut dokumenterat.
+        </div>
 
         <span class="section-label">Incident Management (Case Studies)</span>
         <div class="incident-hero">
@@ -196,30 +211,8 @@
             }
         }
     </script>
-    <div style="text-align: center; margin: 40px 0 20px 0; font-family: 'Inter', sans-serif;">
-    <div style="display: inline-block; background: #333; color: white; padding: 5px 15px; border-radius: 5px; font-weight: bold; border: 1px solid #0047AB;">
-        <span style="color: #aaa; font-size: 10px; text-transform: uppercase; margin-right: 10px;">Portfolio Hits</span>
-        <span style="color: #0047AB;">●</span> <span id="visit-count">12</span>
-    </div>
-    <p style="font-size: 10px; color: #666; margin-top: 5px; letter-spacing: 1px; text-transform: uppercase;">System Online • Monitoring Traffic</p>
-</div>
 
-<script>
-    // Denna funktion simulerar trafik lokalt för att undvika nätverksfel
-    function updateCounter() {
-        let count = localStorage.getItem('portfolio_hits') || 12;
-        if (!localStorage.getItem('session_start')) {
-            count = parseInt(count) + 1;
-            localStorage.setItem('portfolio_hits', count);
-            localStorage.setItem('session_start', 'active');
-        }
-        document.getElementById('visit-count').innerHTML = count;
-    }
-    updateCounter();
-</script>
-</div>
-    <p style="font-size: 10px; color: #666; margin-top: 5px; letter-spacing: 1px; text-transform: uppercase;">System Online • Monitoring Traffic</p>
-</div>
-
+    <script data-goatcounter="https://hamdan.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
