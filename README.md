@@ -1,3 +1,16 @@
+# ⚡ ACTION REQUIRED: REVIEW TECHNICAL CASE STUDIES
+
+### Klicka på knappen nedan för att verifiera min kompetens inom IAM, ServiceNow och Active Directory genom en interaktiv simulering.
+
+[![KLICKA HÄR FÖR ATT STARTA](https://img.shields.io/badge/ÖPPNA_INTERAKTIV_PORTFOLIO-0047AB?style=for-the-badge&logo=microsoft-azure&logoColor=white)](https://hamdan-source.github.io/Identity-Access-Management-IT-Support-Project/)
+
+---
+
+> **NOTERA:** Denna miljö visar konkreta lösningar på P1-incidenter och infrastruktur-konfigurationer som är relevanta för din rekrytering.
+
+
+
+
 # Identity and Access Management -IT Support Project
 
 There is a difference between resolving a technical issue and understanding what that issue means for the person affected.
