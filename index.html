@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamdan Suleiman | IT Support Portfolio</title>
+    <style>
+        /* Vi byter till Inter för en rakare och tydligare look */
+        @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500&family=Inter:wght@400;500;600;700;800&display=swap');
+        
+        :root {
+            --bg: #ffffff;
+            --bg-subtle: #f8f9fa;
+            --text-main: #1a1a1a;
+            --text-sub: #555555;
+            --accent: #2d3436;
+            --border: #e0e0e0;
+            --success: #27ae60;
+            --priority: #c0392b;
+        }
+
+        *{box-sizing:border-box;margin:0;padding:0}
+        /* Body använder nu Inter istället för Syne */
+        body{font-family:'Inter', sans-serif;background:var(--bg);color:var(--text-main);line-height:1.5; -webkit-font-smoothing: antialiased;}
+        .page{max-width:760px;margin:0 auto;padding:3rem 1.5rem}
+
+        /* Header */
+        .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:4rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+        .topbar-left{font-family:'DM Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-sub)}
+        .contact-links{display:flex;gap:1.5rem}
+        .contact-link{font-family:'DM Mono',monospace;font-size:12px;color:var(--text-sub);text-decoration:none;transition:0.2s}
+        .contact-link:hover{color:var(--text-main);text-decoration:underline}
+
+        /* Hero Section */
+        .hero{margin-bottom:4rem}
+        .hero-label{font-family:'DM Mono',monospace;font-size:11px;color:var(--text-sub);text-transform:uppercase;margin-bottom:1rem;display:block}
+        .hero-name{font-size:52px;font-weight:800;line-height:1.1;margin-bottom:1rem;letter-spacing:-0.03em}
+        .hero-role{font-size:19px;color:var(--text-sub);margin-bottom:1rem;font-weight:500}
+
+        /* Incident Section */
+        .section-label{font-family:'DM Mono',monospace;font-size:11px;text-transform:uppercase;margin-bottom:1.5rem;color:var(--text-sub);display:block;letter-spacing:0.1em}
+        .incident-hero{background:var(--bg-subtle);border-radius:12px;padding:2rem;margin-bottom:1rem;border:1px solid var(--border);position:relative; transition: 0.3s;}
+        .incident-hero:hover {border-color: var(--accent);}
+        .badge{position:absolute;top:1.5rem;right:1.5rem;font-family:'DM Mono',monospace;font-size:10px;padding:4px 8px;border-radius:4px;background:var(--priority);color:white;font-weight:bold}
+        .incident-title{font-size:17px;font-weight:700;margin-bottom:0.5rem;display:flex;align-items:center;gap:8px}
+        .incident-desc{font-size:15px;color:var(--text-sub);margin-bottom:1.5rem;max-width:90%}
+        
+        /* Interactive Screenshot Toggle */
+        .screenshot-toggle {
+            display: inline-block;
+            font-family: 'DM Mono', monospace;
+            font-size: 12px;
+            color: var(--accent);
+            text-decoration: underline;
+            cursor: pointer;
+            margin-bottom: 1rem;
+        }
+        .screenshot-container {
+            display: none;
+            margin-top: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .screenshot-container img {
+            width: 100%;
+            display: block;
+        }
+
+        .incident-meta{font-family:'DM Mono',monospace;font-size:12px;display:flex;gap:20px;color:var(--success)}
+
+        /* Tickets Grid */
+        .incidents-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:1rem;margin-bottom:4rem}
+        .card{border:1px solid var(--border);border-radius:8px;padding:1.5rem;transition:0.2s;text-decoration:none;color:inherit;display:block}
+        .card:hover{border-color:var(--accent);background:var(--bg-subtle)}
+        .card-title{font-size:14px;font-weight:700;margin-bottom:0.5rem;color:var(--text-main)}
+        .card-desc{font-size:13px;color:var(--text-sub)}
+
+        /* Tech Stack */
+        .stack-grid{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:4rem}
+        .tag{font-family:'DM Mono',monospace;font-size:12px;padding:6px 12px;background:var(--bg-subtle);border:1px solid var(--border);border-radius:4px;transition:0.2s}
+        .tag:hover {border-color: var(--accent);}
+        .tag.bold{background:var(--accent);color:white;border-color:var(--accent)}
+
+        /* Contact/CTA Section */
+        .final-cta {margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--border);}
+        .cta-title {font-size: 24px; font-weight: 800; margin-bottom: 0.5rem;}
+        .cta-sub {font-size: 16px; color: var(--text-sub); margin-bottom: 2rem;}
+        .cta-grid {display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;}
+        .cta-item {background: var(--bg-subtle); padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; transition: 0.2s; border: 1px solid transparent;}
+        .cta-item:hover {border-color: var(--accent); transform: translateY(-2px);}
+        .cta-label {font-family: 'DM Mono', monospace; font-size: 11px; text-transform: uppercase; color: var(--text-sub); display: block; margin-bottom: 0.5rem;}
+        .cta-value {font-size: 16px; font-weight: 700;}
+
+        .github-btn {display: inline-block; background: var(--accent); color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-family: 'DM Mono', monospace; font-size: 14px; font-weight: 700; width: 100%; text-align: center; transition: 0.2s;}
+        .github-btn:hover {opacity: 0.9; transform: translateY(-2px);}
+
+        @media (max-width: 600px) {
+            .hero-name{font-size:38px}
+            .topbar{flex-direction:column;gap:1rem;align-items:flex-start}
+            .incident-hero {padding: 1.5rem;}
+            .badge {position: static; display: inline-block; margin-bottom: 1rem;}
+            .cta-grid {grid-template-columns: 1fr;}
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header class="topbar">
+            <div class="topbar-left">IT-Support // Infrastruktur</div>
+            <nav class="contact-links">
+                <a href="mailto:hamdan.suleiman@hotmail.com" class="contact-link">Mail</a>
+                <a href="tel:0765723215" class="contact-link">076 572 32 15</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <span class="hero-label">Baserad i Stockholm</span>
+            <h1 class="hero-name">Hamdan<br>Suleiman</h1>
+            <p class="hero-role">Fokus på Identity Access Management & Säker Support</p>
+        </section>
+
+        <span class="section-label">Incident Management (Case Studies)</span>
+        <div class="incident-hero">
+            <span class="badge">P1 CRITICAL</span>
+            <div class="incident-title">INC0010001 : Support vid tidskritisk lönekörning</div>
+            <p class="incident-desc">Hantering av låst konto för HR-ledning under snäv tidsfrist. Problemet identifierades i Active Directory, åtgärdades via säkerställd identitetsverifiering och löstes inom utsatt SLA.</p>
+            
+            <div class="screenshot-toggle" onclick="toggleScreenshot()">[ + ] Visa Skärmbild (SLA Verifiering)</div>
+            <div id="screenshot1" class="screenshot-container">
+                <img src="DIN_LÄNK_TILL_BILD_HÄR" alt="Incident Screenshot">
+            </div>
+
+            <div class="incident-meta">
+                <span>✓ Status: Resolved</span>
+                <span>⚡ Impact: High</span>
+            </div>
+        </div>
+
+        <div class="incidents-grid">
+            <div class="card">
+                <div class="card-title">INC0010005 : Entra ID / MFA</div>
+                <p class="card-desc">Konfiguration och felsökning av villkorstyrd åtkomst (Conditional Access). Återställning av MFA för användare vid enhetsbyte.</p>
+            </div>
+            <div class="card">
+                <div class="card-title">INC0010006 : Intune / MDM</div>
+                <p class="card-desc">Provisionering av hårdvara via Autopilot. Implementation av efterlevnadspolicyer för mobila enheter.</p>
+            </div>
+        </div>
+
+        <span class="section-label">Teknisk Stack</span>
+        <div class="stack-grid">
+            <span class="tag bold">Active Directory</span>
+            <span class="tag bold">Microsoft Entra ID</span>
+            <span class="tag bold">Intune (Endpoint Manager)</span>
+            <span class="tag bold">ServiceNow</span>
+            <span class="tag">Azure Portal</span>
+            <span class="tag">Windows Server 2025</span>
+            <span class="tag">ITIL Foundation</span>
+            <span class="tag">IAM Governance</span>
+            <span class="tag">Networking (TCP/IP)</span>
+            <span class="tag">PowerShell</span>
+        </div>
+
+        <section class="final-cta">
+            <h2 class="cta-title">Redo att leverera från dag ett</h2>
+            <p class="cta-sub">Tillgänglig omgående : Stockholm eller distans</p>
+            
+            <div class="cta-grid">
+                <a href="tel:0765723215" class="cta-item">
+                    <span class="cta-label">Ring direkt</span>
+                    <span class="cta-value">076 572 32 15</span>
+                </a>
+                <a href="mailto:hamdan.suleiman@hotmail.com" class="cta-item">
+                    <span class="cta-label">Skicka mejl</span>
+                    <span class="cta-value">hamdan.suleiman@hotmail.com</span>
+                </a>
+            </div>
+
+            <a href="https://github.com/Hamdan-source/Identity-Access-Management-IT-Support-Project" class="github-btn">
+                Utforska fullständig dokumentation på GitHub
+            </a>
+        </section>
+    </div>
+
+    <script>
+        function toggleScreenshot() {
+            var x = document.getElementById("screenshot1");
+            var btn = document.querySelector(".screenshot-toggle");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+                btn.innerHTML = "[ + ] Visa Skärmbild (SLA Verifiering)";
+            } else {
+                x.style.display = "block";
+                btn.innerHTML = "[ - ] Dölj Skärmbild";
+            }
+        }
+    </script>
+</body>
+</html>
