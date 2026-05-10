@@ -19,25 +19,65 @@
             --p2: #8e44ad;
             --automation: #2980b9;
         }
- 
-        *{box-sizing:border-box;margin:0;padding:0}
-        body{font-family:'Inter', sans-serif;background:var(--bg);color:var(--text-main);line-height:1.5; -webkit-font-smoothing: antialiased;}
-        .page{max-width:760px;margin:0 auto;padding:3rem 1.5rem}
- 
-        /* Header */
-        .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:4rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
-        .topbar-left{font-family:'DM Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-sub)}
-        .contact-links{display:flex;gap:1.5rem}
-        .contact-link{font-family:'DM Mono',monospace;font-size:12px;color:var(--text-sub);text-decoration:none;transition:0.2s}
-        .contact-link:hover{color:var(--text-main);text-decoration:underline}
- 
-        /* Hero Section */
-        .hero{margin-bottom:2.5rem}
-        .hero-label{font-family:'DM Mono',monospace;font-size:11px;color:var(--text-sub);text-transform:uppercase;margin-bottom:1rem;display:block}
-        .hero-name{font-size:52px;font-weight:800;line-height:1.1;margin-bottom:1rem;letter-spacing:-0.03em}
-        .hero-role{font-size:19px;color:var(--text-sub);margin-bottom:1rem;font-weight:500}
- 
-        /* Hook Box */
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text-main);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+        .page { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem; }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .topbar-left {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-sub);
+        }
+        .contact-links { display: flex; gap: 1.5rem; }
+        .contact-link {
+            font-family: 'DM Mono', monospace;
+            font-size: 12px;
+            color: var(--text-sub);
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .contact-link:hover { color: var(--text-main); text-decoration: underline; }
+
+        .hero { margin-bottom: 2.5rem; }
+        .hero-label {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            color: var(--text-sub);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .hero-name {
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: -0.03em;
+        }
+        .hero-role {
+            font-size: 19px;
+            color: var(--text-sub);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
         .hook-box {
             background: var(--accent);
             color: white;
@@ -48,67 +88,116 @@
             line-height: 1.6;
             font-weight: 500;
         }
- 
-        /* Incident Section */
-        .section-label{font-family:'DM Mono',monospace;font-size:11px;text-transform:uppercase;margin-bottom:1.5rem;color:var(--text-sub);display:block;letter-spacing:0.1em}
-        .incident-hero{background:var(--bg-subtle);border-radius:12px;padding:2rem;margin-bottom:1rem;border:1px solid var(--border);position:relative; transition: 0.3s;}
-        .incident-hero:hover {border-color: var(--accent);}
-        .badge{position:absolute;top:1.5rem;right:1.5rem;font-family:'DM Mono',monospace;font-size:10px;padding:4px 8px;border-radius:4px;background:var(--priority);color:white;font-weight:bold}
-        .badge-p2{background:var(--p2)}
-        .badge-automation{background:var(--automation)}
-        .incident-title{font-size:17px;font-weight:700;margin-bottom:0.5rem;display:flex;align-items:center;gap:8px}
-        .incident-desc{font-size:15px;color:var(--text-sub);margin-bottom:1.5rem;max-width:90%}
-        
-        /* Interactive Screenshot Toggle */
-        .screenshot-toggle {
-            display: inline-block;
+
+        .section-label {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            color: var(--text-sub);
+            display: block;
+            letter-spacing: 0.1em;
+        }
+
+        .incident-hero {
+            background: var(--bg-subtle);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border);
+            position: relative;
+            transition: 0.3s;
+        }
+        .incident-hero:hover { border-color: var(--accent); }
+
+        .badge {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-family: 'DM Mono', monospace;
+            font-size: 10px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background: var(--priority);
+            color: white;
+            font-weight: bold;
+        }
+        .badge-p2 { background: var(--p2); }
+        .badge-automation { background: var(--automation); }
+
+        .incident-title {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .incident-desc {
+            font-size: 15px;
+            color: var(--text-sub);
+            margin-bottom: 1.5rem;
+            max-width: 90%;
+        }
+        .incident-meta {
             font-family: 'DM Mono', monospace;
             font-size: 12px;
-            color: var(--accent);
-            text-decoration: underline;
-            cursor: pointer;
-            margin-bottom: 1rem;
+            display: flex;
+            gap: 20px;
+            color: var(--success);
+            flex-wrap: wrap;
         }
-        .screenshot-container {
-            display: none;
-            margin-top: 1rem;
-            border-radius: 8px;
-            overflow: hidden;
+
+        .incidents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-bottom: 4rem;
+        }
+        .card {
             border: 1px solid var(--border);
-        }
-        .screenshot-container img {
-            width: 100%;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: 0.2s;
+            text-decoration: none;
+            color: inherit;
             display: block;
         }
- 
-        .incident-meta{font-family:'DM Mono',monospace;font-size:12px;display:flex;gap:20px;color:var(--success)}
-
-        /* Code snippet */
-        .code-snippet {
-            background: #1e1e1e;
-            color: #d4d4d4;
+        .card:hover {
+            border-color: var(--accent);
+            background: var(--bg-subtle);
+        }
+        .card-title {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+        .card-desc {
+            font-size: 13px;
+            color: var(--text-sub);
+        }
+        .card-badge {
+            display: inline-block;
+            font-family: 'DM Mono', monospace;
+            font-size: 10px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            background: #e67e22;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 0.75rem;
+        }
+        .card-meta {
             font-family: 'DM Mono', monospace;
             font-size: 12px;
-            padding: 1rem 1.25rem;
-            border-radius: 6px;
-            margin-bottom: 1.25rem;
-            overflow-x: auto;
-            line-height: 1.7;
+            display: flex;
+            gap: 20px;
+            color: var(--success);
+            margin-top: 0.75rem;
+            flex-wrap: wrap;
         }
-        .code-snippet .cmd{color: #9cdcfe;}
-        .code-snippet .param{color: #ce9178;}
-        .code-snippet .comment{color: #6a9955;}
- 
-        /* Tickets Grid */
-        .incidents-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:1rem;margin-bottom:4rem}
-        .card{border:1px solid var(--border);border-radius:8px;padding:1.5rem;transition:0.2s;text-decoration:none;color:inherit;display:block}
-        .card:hover{border-color:var(--accent);background:var(--bg-subtle)}
-        .card-title{font-size:14px;font-weight:700;margin-bottom:0.5rem;color:var(--text-main)}
-        .card-desc{font-size:13px;color:var(--text-sub)}
-        .card-badge{display:inline-block;font-family:'DM Mono',monospace;font-size:10px;padding:3px 8px;border-radius:4px;background:#e67e22;color:white;font-weight:bold;margin-bottom:0.75rem}
-        .card-meta{font-family:'DM Mono',monospace;font-size:12px;display:flex;gap:20px;color:var(--success);margin-top:0.75rem}
- 
-        /* Automation Section */
+
         .automation-card {
             background: var(--bg-subtle);
             border-radius: 12px;
@@ -120,33 +209,113 @@
         }
         .automation-card:hover { border-color: var(--automation); }
 
-        /* Tech Stack */
-        .stack-grid{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:4rem}
-        .tag{font-family:'DM Mono',monospace;font-size:12px;padding:6px 12px;background:var(--bg-subtle);border:1px solid var(--border);border-radius:4px;transition:0.2s}
-        .tag:hover {border-color: var(--accent);}
-        .tag.bold{background:var(--accent);color:white;border-color:var(--accent)}
- 
-        /* Contact/CTA Section */
-        .final-cta {margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--border);}
-        .cta-title {font-size: 24px; font-weight: 800; margin-bottom: 0.5rem;}
-        .cta-sub {font-size: 16px; color: var(--text-sub); margin-bottom: 2rem;}
-        .cta-grid {display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;}
-        .cta-item {background: var(--bg-subtle); padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; transition: 0.2s; border: 1px solid transparent;}
-        .cta-item:hover {border-color: var(--accent); transform: translateY(-2px);}
-        .cta-label {font-family: 'DM Mono', monospace; font-size: 11px; text-transform: uppercase; color: var(--text-sub); display: block; margin-bottom: 0.5rem;}
-        .cta-value {font-size: 16px; font-weight: 700;}
- 
-        .github-btn {display: inline-block; background: var(--accent); color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-family: 'DM Mono', monospace; font-size: 14px; font-weight: 700; width: 100%; text-align: center; transition: 0.2s;}
-        .github-btn:hover {opacity: 0.9; transform: translateY(-2px);}
- 
+        .stack-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 4rem;
+        }
+        .tag {
+            font-family: 'DM Mono', monospace;
+            font-size: 12px;
+            padding: 6px 12px;
+            background: var(--bg-subtle);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            transition: 0.2s;
+        }
+        .tag:hover { border-color: var(--accent); }
+        .tag.bold {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .final-cta {
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border);
+        }
+        .cta-title {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        .cta-sub {
+            font-size: 16px;
+            color: var(--text-sub);
+            margin-bottom: 2rem;
+        }
+        .cta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .cta-item {
+            background: var(--bg-subtle);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s;
+            border: 1px solid transparent;
+        }
+        .cta-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        .cta-label {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--text-sub);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .cta-value {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .github-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'DM Mono', monospace;
+            font-size: 14px;
+            font-weight: 700;
+            width: 100%;
+            text-align: center;
+            transition: 0.2s;
+        }
+        .github-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
         @media (max-width: 600px) {
-            .hero-name{font-size:38px}
-            .topbar{flex-direction:column;gap:1rem;align-items:flex-start}
-            .incident-hero {padding: 1.5rem;}
-            .automation-card {padding: 1.5rem;}
-            .badge {position: static; display: inline-block; margin-bottom: 1rem;}
-            .cta-grid {grid-template-columns: 1fr;}
-            .hook-box {font-size: 14px; padding: 1.25rem 1.5rem;}
+            .hero-name { font-size: 38px; }
+            .topbar {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+            .incident-hero { padding: 1.5rem; }
+            .automation-card { padding: 1.5rem; }
+            .badge {
+                position: static;
+                display: inline-block;
+                margin-bottom: 1rem;
+            }
+            .cta-grid { grid-template-columns: 1fr; }
+            .hook-box {
+                font-size: 14px;
+                padding: 1.25rem 1.5rem;
+            }
         }
     </style>
 </head>
@@ -159,56 +328,40 @@
                 <a href="tel:0765723215" class="contact-link">076 572 32 15</a>
             </nav>
         </header>
- 
+
         <section class="hero">
             <span class="hero-label">Baserad i Stockholm</span>
             <h1 class="hero-name">Hamdan<br>Suleiman</h1>
             <p class="hero-role">Fokus på Identity Access Management & Säker Support</p>
         </section>
- 
+
         <div class="hook-box">
-            Åtta dokumenterade ärenden i en komplett Microsoft-miljö — inklusive ett P1-ärende löst inom SLA, ett proaktivt säkerhetsaudit som identifierade en okontrollerad adminidentitet, och ett automatiserat onboarding-pipeline byggt i PowerShell. Varje ticket verifierbar. Varje beslut dokumenterat.
+            Åtta dokumenterade ärenden i en komplett Microsoft-miljö inklusive ett P1-ärende löst inom SLA, ett proaktivt säkerhetsaudit som identifierade en okontrollerad adminidentitet, och ett automatiserat onboarding-pipeline byggt i PowerShell. Varje ticket verifierbar. Varje beslut dokumenterat.
         </div>
- 
-        <!-- ── INCIDENT MANAGEMENT ── -->
+
         <span class="section-label">Incident Management (Case Studies)</span>
 
-        <!-- P1 Hero -->
         <div class="incident-hero">
             <span class="badge">P1 CRITICAL</span>
             <div class="incident-title">INC0010001 : Support vid tidskritisk lönekörning</div>
             <p class="incident-desc">Agerade självgående under tidspress när HR-användares konto låstes under aktiv lönekörning. Identifierade rotorsaken i Active Directory, verifierade identitet och återställde åtkomst inom SLA. Lönekörningen genomfördes utan avbrott.</p>
-            
-            <div class="screenshot-toggle" onclick="toggleScreenshot()">[ + ] Visa Skärmbild (SLA Verifiering)</div>
-            <div id="screenshot1" class="screenshot-container">
-                <img src="https://github.com/Hamdan-source/Identity-Access-Management-IT-Support-Project/raw/main/screenshots/tickets/INC0010001-work-notes-added.png" alt="Incident Screenshot">
-            </div>
- 
             <div class="incident-meta">
                 <span>✓ Status: Resolved</span>
                 <span>⚡ Impact: High</span>
             </div>
         </div>
 
-        <!-- P2 Ghost Identity Audit Hero -->
         <div class="incident-hero" style="margin-bottom:2rem;">
             <span class="badge badge-p2">P2 HIGH</span>
             <div class="incident-title">INC0010007 : Ghost Identity Audit</div>
             <p class="incident-desc">Identifierade ett okontrollerat lokalt adminskonto som opererade utanför Entra ID-governance utan att någon ticket hade skapats. Korrelerade autentiseringshändelser i Event Viewer (Event ID 4624), bekräftade att kontot kringgick IAM-kontroller och mitigerade hotet med PowerShell. Ingen verksamhetspåverkan.</p>
-
-            <div class="code-snippet">
-                <span class="comment"># Inaktivera shadow admin-konto</span><br>
-                <span class="cmd">net user</span> <span class="param">ShadowAdmin active:no</span>
-            </div>
-
             <div class="incident-meta">
                 <span>✓ Status: Mitigated</span>
                 <span>⚡ Impact: Security</span>
                 <span>🔍 Proaktivt identifierat</span>
             </div>
         </div>
- 
-        <!-- P3 Grid -->
+
         <div class="incidents-grid">
             <div class="card">
                 <span class="card-badge">P3 MODERATE</span>
@@ -216,24 +369,28 @@
                 <p class="card-desc">Säkerställde att ny anställd hade full systemåtkomst från dag ett genom att proaktivt skapa och verifiera AD-konto enligt onboarding-process. Förhindrade produktivitetsförlust från första arbetsdagen.</p>
                 <div class="card-meta"><span>✓ Status: Resolved</span><span>⚡ Impact: High</span></div>
             </div>
+
             <div class="card">
                 <span class="card-badge">P3 MODERATE</span>
                 <div class="card-title">INC0010003 : Behörigheter</div>
                 <p class="card-desc">Analyserade och löste åtkomstproblem för Finance-avdelningen genom att tilldela rätt säkerhetsgrupp enligt principen om minsta behörighet. Säkerställde att avdelningen fick korrekt åtkomst utan att kompromissa med organisationens säkerhetspolicy.</p>
                 <div class="card-meta"><span>✓ Status: Resolved</span><span>⚡ Impact: High</span></div>
             </div>
+
             <div class="card">
                 <span class="card-badge">P3 MODERATE</span>
                 <div class="card-title">INC0010004 : Offboarding</div>
                 <p class="card-desc">Hanterade offboarding strukturerat och noggrant genom att inaktivera konto, ta bort gruppmedlemskap och säkra all åtkomst i Active Directory. Minimerade säkerhetsrisken vid anställds avslut och säkerställde att ingen obehörig åtkomst kvarstod.</p>
                 <div class="card-meta"><span>✓ Status: Resolved</span><span>⚡ Impact: High</span></div>
             </div>
+
             <div class="card">
                 <span class="card-badge">P3 MODERATE</span>
                 <div class="card-title">INC0010005 : Entra ID / MFA</div>
                 <p class="card-desc">Verifierade användarens identitet och återställde förlorad MFA-enhet via Entra ID-administrationsportalen. Säkerställde att säkerhetspolicyn efterlevdes genom hela processen.</p>
                 <div class="card-meta"><span>✓ Status: Resolved</span><span>⚡ Impact: High</span></div>
             </div>
+
             <div class="card" style="grid-column: 1 / -1;">
                 <span class="card-badge">P3 MODERATE</span>
                 <div class="card-title">INC0010006 : Intune / MDM</div>
@@ -242,31 +399,19 @@
             </div>
         </div>
 
-        <!-- ── AUTOMATION & SCRIPTING ── -->
         <span class="section-label">Automation &amp; Scripting</span>
 
         <div class="automation-card">
             <span class="badge badge-automation" style="position:absolute;top:1.5rem;right:1.5rem;">AUTOMATION</span>
             <div class="incident-title">INC0010008 : Automated Onboarding Pipeline</div>
             <p class="incident-desc" style="margin-bottom:1.25rem;">Byggde ett PowerShell-skript som tar emot en ny anställds namn, avdelning och roll som input, skapar AD-kontot automatiskt, tilldelar rätt säkerhetsgrupp, tvingar lösenordsbyte vid första inloggning och skriver en komplett revisionslogg. Eliminerar manuella onboarding-steg och reducerar risken för mänskliga fel.</p>
-
-            <div class="code-snippet">
-                <span class="comment"># Skapa AD-konto och tilldela grupp</span><br>
-                <span class="cmd">New-ADUser</span> <span class="param">-Name $FullName -Department $Department -Enabled $true</span><br>
-                <span class="cmd">Add-ADGroupMember</span> <span class="param">-Identity $SecurityGroup -Members $Username</span><br>
-                <span class="cmd">Set-ADUser</span> <span class="param">-ChangePasswordAtLogon $true</span><br>
-                <span class="comment"># Skriv revisionslogg</span><br>
-                <span class="cmd">Add-Content</span> <span class="param">-Path "audit.log" -Value "$Username skapad $(Get-Date)"</span>
-            </div>
-
             <div class="incident-meta">
                 <span>✓ Status: Deployed</span>
                 <span>⚡ Impact: Operational Efficiency</span>
                 <span>🤖 Fullt automatiserat</span>
             </div>
         </div>
- 
-        <!-- ── TECH STACK ── -->
+
         <span class="section-label">Teknisk Stack</span>
         <div class="stack-grid">
             <span class="tag bold">Active Directory</span>
@@ -283,11 +428,11 @@
             <span class="tag">DNS</span>
             <span class="tag">Event Viewer</span>
         </div>
- 
+
         <section class="final-cta">
             <h2 class="cta-title">Redo att leverera från dag ett</h2>
             <p class="cta-sub">Tillgänglig omgående : Stockholm eller distans</p>
-            
+
             <div class="cta-grid">
                 <a href="tel:0765723215" class="cta-item">
                     <span class="cta-label">Ring direkt</span>
@@ -298,27 +443,13 @@
                     <span class="cta-value">hamdan.suleiman@hotmail.com</span>
                 </a>
             </div>
- 
+
             <a href="https://github.com/Hamdan-source/Identity-Access-Management-IT-Support-Project" class="github-btn">
                 Utforska fullständig dokumentation på GitHub
             </a>
         </section>
     </div>
- 
-    <script>
-        function toggleScreenshot() {
-            var x = document.getElementById("screenshot1");
-            var btn = document.querySelector(".screenshot-toggle");
-            if (x.style.display === "block") {
-                x.style.display = "none";
-                btn.innerHTML = "[ + ] Visa Skärmbild (SLA Verifiering)";
-            } else {
-                x.style.display = "block";
-                btn.innerHTML = "[ - ] Dölj Skärmbild";
-            }
-        }
-    </script>
- 
+
     <script data-goatcounter="https://hamdan.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
 </body>
