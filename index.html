@@ -136,7 +136,7 @@
         .incident-desc {
             font-size: 15px;
             color: var(--text-sub);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             max-width: 90%;
         }
         .incident-meta {
@@ -146,6 +146,28 @@
             gap: 20px;
             color: var(--success);
             flex-wrap: wrap;
+        }
+
+        .screenshot-toggle {
+            margin-top: 0.85rem;
+            font-family: 'DM Mono', monospace;
+        }
+        .screenshot-toggle summary {
+            cursor: pointer;
+            color: var(--automation);
+            font-size: 12px;
+            list-style: none;
+            display: inline-block;
+        }
+        .screenshot-toggle summary::-webkit-details-marker {
+            display: none;
+        }
+        .screenshot-toggle img {
+            margin-top: 0.75rem;
+            max-width: 100%;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            display: block;
         }
 
         .incidents-grid {
@@ -349,6 +371,10 @@
                 <span>✓ Status: Resolved</span>
                 <span>⚡ Impact: High</span>
             </div>
+            <details class="screenshot-toggle">
+                <summary>Se bild nedan</summary>
+                <img src="https://raw.githubusercontent.com/Hamdan-source/Identity-Access-Management-IT-Support-Project/main/screenshots/tickets/INC0010001-ticket-details-filled.png" alt="INC0010001 screenshot">
+            </details>
         </div>
 
         <div class="incident-hero" style="margin-bottom:2rem;">
@@ -360,6 +386,10 @@
                 <span>⚡ Impact: Security</span>
                 <span>🔍 Proaktivt identifierat</span>
             </div>
+            <details class="screenshot-toggle">
+                <summary>Se bild nedan</summary>
+                <img src="https://raw.githubusercontent.com/Hamdan-source/Identity-Access-Management-IT-Support-Project/main/screenshots/tickets/INC0010007_Forensics.png" alt="INC0010007 screenshot">
+            </details>
         </div>
 
         <div class="incidents-grid">
