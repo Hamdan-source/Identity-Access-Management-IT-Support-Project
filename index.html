@@ -16,6 +16,8 @@
             --border: #e0e0e0;
             --success: #27ae60;
             --priority: #c0392b;
+            --p2: #8e44ad;
+            --automation: #2980b9;
         }
  
         *{box-sizing:border-box;margin:0;padding:0}
@@ -52,6 +54,8 @@
         .incident-hero{background:var(--bg-subtle);border-radius:12px;padding:2rem;margin-bottom:1rem;border:1px solid var(--border);position:relative; transition: 0.3s;}
         .incident-hero:hover {border-color: var(--accent);}
         .badge{position:absolute;top:1.5rem;right:1.5rem;font-family:'DM Mono',monospace;font-size:10px;padding:4px 8px;border-radius:4px;background:var(--priority);color:white;font-weight:bold}
+        .badge-p2{background:var(--p2)}
+        .badge-automation{background:var(--automation)}
         .incident-title{font-size:17px;font-weight:700;margin-bottom:0.5rem;display:flex;align-items:center;gap:8px}
         .incident-desc{font-size:15px;color:var(--text-sub);margin-bottom:1.5rem;max-width:90%}
         
@@ -78,6 +82,22 @@
         }
  
         .incident-meta{font-family:'DM Mono',monospace;font-size:12px;display:flex;gap:20px;color:var(--success)}
+
+        /* Code snippet */
+        .code-snippet {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            font-family: 'DM Mono', monospace;
+            font-size: 12px;
+            padding: 1rem 1.25rem;
+            border-radius: 6px;
+            margin-bottom: 1.25rem;
+            overflow-x: auto;
+            line-height: 1.7;
+        }
+        .code-snippet .cmd{color: #9cdcfe;}
+        .code-snippet .param{color: #ce9178;}
+        .code-snippet .comment{color: #6a9955;}
  
         /* Tickets Grid */
         .incidents-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:1rem;margin-bottom:4rem}
@@ -88,6 +108,18 @@
         .card-badge{display:inline-block;font-family:'DM Mono',monospace;font-size:10px;padding:3px 8px;border-radius:4px;background:#e67e22;color:white;font-weight:bold;margin-bottom:0.75rem}
         .card-meta{font-family:'DM Mono',monospace;font-size:12px;display:flex;gap:20px;color:var(--success);margin-top:0.75rem}
  
+        /* Automation Section */
+        .automation-card {
+            background: var(--bg-subtle);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 4rem;
+            border: 1px solid var(--border);
+            position: relative;
+            transition: 0.3s;
+        }
+        .automation-card:hover { border-color: var(--automation); }
+
         /* Tech Stack */
         .stack-grid{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:4rem}
         .tag{font-family:'DM Mono',monospace;font-size:12px;padding:6px 12px;background:var(--bg-subtle);border:1px solid var(--border);border-radius:4px;transition:0.2s}
@@ -111,6 +143,7 @@
             .hero-name{font-size:38px}
             .topbar{flex-direction:column;gap:1rem;align-items:flex-start}
             .incident-hero {padding: 1.5rem;}
+            .automation-card {padding: 1.5rem;}
             .badge {position: static; display: inline-block; margin-bottom: 1rem;}
             .cta-grid {grid-template-columns: 1fr;}
             .hook-box {font-size: 14px; padding: 1.25rem 1.5rem;}
@@ -134,10 +167,13 @@
         </section>
  
         <div class="hook-box">
-            Sex dokumenterade supportärenden i en komplett Microsoft-miljö, inklusive ett Priority 1-ärende löst inom SLA. Varje ticket verifierbar. Varje beslut dokumenterat.
+            Åtta dokumenterade ärenden i en komplett Microsoft-miljö — inklusive ett P1-ärende löst inom SLA, ett proaktivt säkerhetsaudit som identifierade en okontrollerad adminidentitet, och ett automatiserat onboarding-pipeline byggt i PowerShell. Varje ticket verifierbar. Varje beslut dokumenterat.
         </div>
  
+        <!-- ── INCIDENT MANAGEMENT ── -->
         <span class="section-label">Incident Management (Case Studies)</span>
+
+        <!-- P1 Hero -->
         <div class="incident-hero">
             <span class="badge">P1 CRITICAL</span>
             <div class="incident-title">INC0010001 : Support vid tidskritisk lönekörning</div>
@@ -153,7 +189,26 @@
                 <span>⚡ Impact: High</span>
             </div>
         </div>
+
+        <!-- P2 Ghost Identity Audit Hero -->
+        <div class="incident-hero" style="margin-bottom:2rem;">
+            <span class="badge badge-p2">P2 HIGH</span>
+            <div class="incident-title">INC0010007 : Ghost Identity Audit</div>
+            <p class="incident-desc">Identifierade ett okontrollerat lokalt adminskonto som opererade utanför Entra ID-governance utan att någon ticket hade skapats. Korrelerade autentiseringshändelser i Event Viewer (Event ID 4624), bekräftade att kontot kringgick IAM-kontroller och mitigerade hotet med PowerShell. Ingen verksamhetspåverkan.</p>
+
+            <div class="code-snippet">
+                <span class="comment"># Inaktivera shadow admin-konto</span><br>
+                <span class="cmd">net user</span> <span class="param">ShadowAdmin active:no</span>
+            </div>
+
+            <div class="incident-meta">
+                <span>✓ Status: Mitigated</span>
+                <span>⚡ Impact: Security</span>
+                <span>🔍 Proaktivt identifierat</span>
+            </div>
+        </div>
  
+        <!-- P3 Grid -->
         <div class="incidents-grid">
             <div class="card">
                 <span class="card-badge">P3 MODERATE</span>
@@ -186,13 +241,39 @@
                 <div class="card-meta"><span>✓ Status: Resolved</span><span>⚡ Impact: High</span></div>
             </div>
         </div>
+
+        <!-- ── AUTOMATION & SCRIPTING ── -->
+        <span class="section-label">Automation &amp; Scripting</span>
+
+        <div class="automation-card">
+            <span class="badge badge-automation" style="position:absolute;top:1.5rem;right:1.5rem;">AUTOMATION</span>
+            <div class="incident-title">INC0010008 : Automated Onboarding Pipeline</div>
+            <p class="incident-desc" style="margin-bottom:1.25rem;">Byggde ett PowerShell-skript som tar emot en ny anställds namn, avdelning och roll som input, skapar AD-kontot automatiskt, tilldelar rätt säkerhetsgrupp, tvingar lösenordsbyte vid första inloggning och skriver en komplett revisionslogg. Eliminerar manuella onboarding-steg och reducerar risken för mänskliga fel.</p>
+
+            <div class="code-snippet">
+                <span class="comment"># Skapa AD-konto och tilldela grupp</span><br>
+                <span class="cmd">New-ADUser</span> <span class="param">-Name $FullName -Department $Department -Enabled $true</span><br>
+                <span class="cmd">Add-ADGroupMember</span> <span class="param">-Identity $SecurityGroup -Members $Username</span><br>
+                <span class="cmd">Set-ADUser</span> <span class="param">-ChangePasswordAtLogon $true</span><br>
+                <span class="comment"># Skriv revisionslogg</span><br>
+                <span class="cmd">Add-Content</span> <span class="param">-Path "audit.log" -Value "$Username skapad $(Get-Date)"</span>
+            </div>
+
+            <div class="incident-meta">
+                <span>✓ Status: Deployed</span>
+                <span>⚡ Impact: Operational Efficiency</span>
+                <span>🤖 Fullt automatiserat</span>
+            </div>
+        </div>
  
+        <!-- ── TECH STACK ── -->
         <span class="section-label">Teknisk Stack</span>
         <div class="stack-grid">
             <span class="tag bold">Active Directory</span>
             <span class="tag bold">Microsoft Entra ID</span>
             <span class="tag bold">Intune (Endpoint Manager)</span>
             <span class="tag bold">ServiceNow</span>
+            <span class="tag bold">PowerShell</span>
             <span class="tag">Azure Portal</span>
             <span class="tag">Windows Server 2025</span>
             <span class="tag">ITIL Foundation</span>
@@ -200,7 +281,7 @@
             <span class="tag">Networking (TCP/IP)</span>
             <span class="tag">RDP</span>
             <span class="tag">DNS</span>
- 
+            <span class="tag">Event Viewer</span>
         </div>
  
         <section class="final-cta">
